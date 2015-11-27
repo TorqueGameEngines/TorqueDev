@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="menuCommand1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>109, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>netMercs would like to thank the following individuals for
+their generous contributions to TorqueDev:
+
+(In alphabetical order)
+
+Juergen Bartch,
+Joachim Lous,
+Brandon Maness,
+Claudio Martinez,
+Eric Preston,
+Johnna Rawlings,
+Alex Rice,
+Raymond Richards,
+Christian Soerensen,
+Zachary Way,
+Nick Zafiri</value>
+  </data>
+  <data name="textBox2.Text" xml:space="preserve">
+    <value>netMercs would also like to thank the following individuals for their
+contribution to TorqueDev by way of bug reports, 
+closed beta testing, and/or resources:
+
+(In no particular order)
+
+Brandon Maness
+Tim Sullivan
+Tom Spilman
+Steven Chiu
+Ray "Noolness" Gebhardt
+Joachim Lous
+Trent Polack
+Paul Jan
+Todd D. Degani
+Chris Childs
+Jeffrey Wilson
+Stephane Conde
+Claudio Martinez
+Manoel Balbino de Lima Neto
+Philip Ludington
+Ramen Sama
+Matt Razza</value>
+  </data>
+  <data name="markupLabel1.Text" xml:space="preserve">
+    <value>Special thanks to Brandon Maness of &lt;a href="http://www.smdlabs.com/"&gt;smdLabs&lt;/a&gt; for his constant testing, his video tutorials, and of course putting up with my constantly asking him, "hey, can you just test this really quick?" :)</value>
+  </data>
+</root>

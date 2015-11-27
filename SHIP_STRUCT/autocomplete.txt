@@ -1,0 +1,319 @@
+###############################
+### SYNTAX COMPLETION CODE ####
+###############################
+
+
+### One entry per line!  Formatting rules strictly enforced;
+### that is to say, comments start with # and may only be at the
+### beginning of the line.  No spaces between parameter listings 
+###		(type var,type var) NOT (type var, type var)
+### Only one space between TYPE and PARAMETER.  The pipe "|" is
+### a reserved symbol.  Don't use it anywhere!  ONLY parameter
+### listings and descriptions may be empty.  Everything else must 
+### be defined.
+###
+###
+###
+### FUNCTION NAME|TYPE PARAMETER,...|RETURN VALUE|DESCRIPTION
+
+
+OpenALInitDriver||int|Used to initialize the sound driver
+OpenALShutdownDriver||void|Used to shut down the sound driver
+OpenALRegisterExtensions||void|
+alGetString|string alenum|string|Used to return the string representing the specified ALenum passed
+alxCreateSource|string profile,string xyz|int|Creates and validates the Audio source (sound file) and readies it to be played
+alxCreateSource|string description,string filename,string xyz|int|Creates and validates the Audio source (sound file) and readies it to be played
+alxSourcef|handle hnd,string alenum,variant value|void|Used to set the value of ALenum for the specified handle
+alxSource3f|handle hnd,string alenum,string xyz|void|Used to set the value of ALenum for the specified handle
+alxSource3f|handle hnd,string alenum,float x,float y,float z|void|Used to set the value of ALenum for the specified handle
+alxSourcei|handle hnd,string alenum,variant value|void|to set the value of ALenum for the specified handle
+alxGetSourcef|handle hnd,string alenum|int|Used to get the value of ALenum for the specified Audio Handle
+alxGetSource3f|handle hnd,string alenum|int|to get the value of ALenum for the specified Audio Handle
+alxGetSourcei|handle hnd,string alenum|int|Used to get the value of ALenum for the specified Audio Handle
+alxPlay|handle hnd|int|Used to begin audio playback
+alxPlay|string profile|int|Used to begin audio playback
+alxPlay|string profile,float x,float y,float z|int|Used to begin audio playback
+alxStop|handle hnd|void|Used to stop the audio playback on specified Handle
+alxStopAll||void|Used to stop ALL Audio playback on all registered sound channels
+alxIsPlaying|handle hnd|bool|Used to determine if a Handle is currently performing audio playback
+alxListener|string alenum,variant value|void|Used to set the ALenum extension supporting linear gain to value
+alListener3f|string alenum,string xyz|void|Used to set the ALenum extension supporting linear gain to value
+alListener3f|string alenum,float x,float y,float z|void|Used to set the ALenum extension supporting linear gain to value
+alxGetListenerf|string alenum|int|Used to get the value of the ALenum extension supporting linear gain
+alxGetListener3f|string alenum|int|Used to get the value of the ALenum extension supporting linear gain
+alxGetListeneri|string alenum|int|Used to get the value of the ALenum extension supporting linear gain
+alxGetChannelVolume|int channel_id|int|Used to get the current volume of specified channel
+alxSetChannelVolume|int channel_id,int volume|int|Used to set the volume of the specified channel
+dumpConsoleClasses||void|Used to dump all registered console classes to the console in native C++ syntax
+expandFilename|string filename|string|Used to determine the actual path of the specified filename
+strcmp|string one,string two|int|Used to compare two strings
+stricmp|string one,string two|int|Used to compare two strings with case insensitivity
+strlen|string str|int|Used to get the length of a string
+strstr|string str,string substr|string|Used to locate first occurrence of a "substr" within a "string"
+strpos|var stringhay,var stringneedle|int|Used to locate the first occurrence of stringneedle in stringhay
+strpos|var stringhay,var stringneedle,var intoffset|int|Used to locate the first occurrence of stringneedle in stringhay
+ltrim|var str|string|Used to strip the leading white space from str.
+rtrim|var str|string|Used to strip the trailing white space from str
+trim|var str|string|Used to strip the leading and trailing white space from str.
+sripChars|var string,var chars|string|Used to remove chars from string 
+strlwr|var string|string|Used to convert str to its lower case equivalent.
+strupr|var string|string|Used to convert str to its upper case equivalent.
+strchr|var string,var char|string|Used to locate the first occurance of char in string
+strreplace|var string,var from,var to|string|Used to replace all occurrences of from and replaces with to.
+getSubStr|var string,var start,var numChars|string|Used to get the sub string of string, starting at start, and continuing to either the end of the string, or  numChars characters, whichever comes first.
+getWord|var text,var index|string|Used to get the word at specified index within text.
+getWords|var text,var index|string|Used to get the word(s) specified at index [,entindex] within text.
+getWords|var text,var index,var entindex|string|Used to get the word(s) specified at index [,entindex] within text.
+setWord|var text,var index,var replace|string|Used to replace the word at index with replace within text.
+removeWord|var text,var index|string|Used to remove the word at index from text.
+getWordCount|var text|int|Used to return the number of words within text.
+getField|var text,var index|string|Used to get the field at index within text
+getFields|var text,var index|string|Used to return the field(s) specified at index [,entindex] within text
+getFields|var text,var index,var entindex|string|Used to return the field(s) specified at index [,entindex] within text
+setField|var text,var index,var replace|string|Used to replace field at index with replace.
+removeField|var text,var index|string|Used to remove a field at index from text.
+getFieldCount|var text|int|Used to return the number of fields within text.
+getRecord|var text,var index|string|Used to return the record at index within text.
+getRecords|var text,var index|string|Used to return the record(s) at index [,endIndex] within text.
+getRecords|var text,var index,var endIndex|string|Used to return the record(s) at index [,endIndex] within text.
+setRecord|var text,var index,var replace|string|Used to replace record at index with replace within text.
+removeRecord|var text,var index|string|Used to remove record at index within text.
+getRecordCount|var text|int|Used to return the number of records within text.
+firstWord|var text|string|Used to return the first word within text.
+restWords|var text|string|Used to return the remaining words in text.
+detag|var textTagString|string|Used to detag a string, that is to return the string value for the tagged string
+getTag|var textTagString|string|Used to return the tag for the specified textTagString)
+echo|var text|void|Used to print text to the console
+echo|var text,var ...|void|Used to print text to the console
+warn|var text|void|Used to print text to the console
+warn|var text,var ...|void|Used to print text to the console
+error|var text|void|Used to print text to the console
+error|var text,var ...|void|Used to print text to the console
+expandEscape|var text|string|Used to  escape characters in text (\r becomes \\r)
+collapseEscape|var text|string|Used to remove escaped characters in text (\\r becomes 0xd)
+quit||void|Used to quit the game
+call|var funcName|string|Used to execute the funcName with supplied args
+call|var funcName,var args...|string|Used to execute the funcName with supplied args
+compile|var fileName|int|used to compile fileName
+exec|var fileName|int|Used to compile (if needed) and execute the specified filename or journalScript
+exec|var fileName,var nocalls|int|Used to compile (if needed) and execute the specified filename or journalScript
+exec|var fileName,var nocalls,var journalScript|int|Used to compile (if needed) and execute the specified filename or journalScript
+export|var searchString|void|Used to export (save) the values of searchString to fileName
+export|var searchString,var fileName|void|Used to export (save) the values of searchString to fileName
+export|var searchString,var fileName,var append|void|Used to export (save) the values of searchString to fileName
+deleteVariables|var wildCard|void|Used to delete global variables specified by wildcard
+trace|bool enabled|void|Used to turn trace on or off
+debug||void|Used to start debug mode
+findFirstFile|var stringpattern|string|Used to return the first file in the directory system matching the given pattern
+findNextFile|var stringpattern|string|Used to return the next file matching a search begun in findFirstFile
+getFileCount|var stringpattern|int|Used to return the number of files in the directory tree that match the given pattern
+getFileCRC|var filename|int|Used to get the CRC of specified file name
+isFile|var filename|int|Used to determine if file exists
+isWriteableFileName|var filename|int|Used to determine if file specified by filename can be written to
+fileExt|var filename|string|Used to return the extension of file specified by filename
+fileBase|var filename|string|Used to return the base name of the file specified by filename
+fileName|var filename|string|Used to return the name of the file specified by filename
+filePath|var filename|string|Used to return the path of the file specified by filename
+nextToken|var str,var token,var delim|string|Used to set token to next string delimited by delim
+setLogMode|var mode|void|Used to set the current log mode (0 = Turn logging off, 1 = Loggin on, 2 = Close current logfile and open a new one)
+setEchoFileLoads|bool enabled|void|Used to turn the echoing of File Loads to the console on or off (0 = OFF, 1 = ON)
+backtrace||void|Used to enable script back tracing (echoing of script call stack to console)
+isPackage|var packageName|int|Used to determine if packageName is a registered package
+activatePackage|var packageName|void|Used to activate usage of package specified by packageName
+deactivatePackage|var packageName|void|Used to disable usage of package specified by packageName
+nameToID|var object|int|Used to return the ID number of the specified object
+isObject|var object|int|Used to determine if object exists
+cancel|var eventId|void|Used to cancel the specified event
+isEventPending|var %scheduleID|int|Used to determine if there are any pending events for specified schedule
+schedule|var time,var command,var arg...|void|Used to schedule an event
+deleteDataBlocks||void|Used to remove all registered dataBlocks from the game
+telnetSetParameters|var port,var consolePass,var listenPass|void|Used to setup and accept telnet request with the specified options
+dbgSetParameters|var port,var pass|void|Used to setup and accept debug connects with the specified options
+dbgSetParameters|var port,var pass,bool waitForClientConnect|void|Used to setup and accept debug connects with the specified options and optionally wait for a debugger to connect.  This overload is only valid with Tom Spilman's Enhanced Telnet Debugger.
+dnetSetLogging|bool enabled|void|Used to turn on network packet loging to the console
+setNPatch|bool enabled,var int|void|Used to enable Npatching (quadratic Interpolation) at specified level
+toggleNPatch||void|Used to toggle the state of Npatch
+increaseNPatch||void|Used to increase the level of Npatch by one
+decreaseNPatch||void|Used to decrease the level of Npatch by one
+setOpenGLMipReduction|var 05|void|Used to control Shape Texture Detail (Higher number represents increase texture detail)
+setOpenGLSkyMipReduction|var 05|void|Used to Control texture detail for the skybox and clouds (Higher number represents increase texture detail)
+setOpenGLInteriorMipReduction|var 05|void|Used to Contril texture detail for buildings
+setOpenGLTextureCompressionHint|var hint|void|Used to Control how textures are compressed (GL_DONT_CARE, GL_FASTEST, GL_NICEST)
+setOpenGLAnisotropy|var 01|void|Used to set the level of Anisotropy (Advanced texture rendering other than trilinear or bilinear)
+clearTextureHolds||int|Used to free/release any textures that are not being used
+addMaterialMapping|var materialName,var Sound,var Color|void|Used to add Sound and Puff color to specified material
+aiConnect|var val...|int|Used to Construct and register a new AI connection. No control object is set
+aiAddPlayer|var playerName|void|Used to add a bot to the game
+aiAddPlayer|var playerName,var AIClassType|void|Used to add a bot to the game
+setPowerAudioProfiles|var powerUp,var powerDown|void|Used to powerUp/Down audio files for powerups
+gotoWebPage|var address|void|Used to open clients default browser with specified address
+deactivateDirectInput||void|Used to disable polling of direct input devices (keyboard, mouse, joystick etc)
+activateDirectInput||void|Used to activate polling of direct input devices (keyboard, mouse, joystick etc)
+stripTrailingSpaces|var string|string|Used to strip traling spaces and underscores from string to be used for player name
+setDefaultFov|var defaultFOV|void|Used to set the default FOV (Field of View)
+setZoomSpeed|var speed|void|Used to set the zoom speed
+setFov|var FOV|void|Used to set the active FOV
+screenShot|var filename|void|Used to take a screen shot and save it to file specified by filename
+panoramaScreenShot|var filename|void|Used to take a Panoramic Screen shot and save it to file specified by filename
+purgeResources||void|Used to purge all game resources
+lightScene|var completeCallback,var forceAlways,var forceWritable|void|Used to light the mission, completeCallback will be called upon completion of mission lighting 
+flushTextureCache||void|used to delete Textures in the cache
+getControlObjectAltitude||int|Used to get the altitude of an player control object
+getControlObjectSpeed||int|Used to get the Speed of a player control object
+containerFindFirst|var type,var point,var x,var y,var z|int|Appears to find objects of type in a box
+containerFindNext||int|Used to return the next object in a box
+snapToggle||void|Used to enable snap to grid functionality
+getVersionNumber||int|Used to get the current hard coded engine version number
+getVersionString||string|Used to get the current hard coded engine version number
+getCompileTimeString||string|Used to return the compile time and date 
+getBuildString||string|Used to get the BUILD type (Release or Debug)
+getSimTime||int|Used to get the Game time
+getRealTime||int|Used to get the real time (in milliseconds)
+setNetPort|var port|int|Used to set the network port
+lockMouse|var isLocked|void|Used to toggle the mouse state
+rebuildModPaths||void|Used to rebuild the default MOD Paths (currently set to common)
+getModPaths||string|Used to return the current mod path
+createCanvas|var WindowTitle|void|Used to create a canvas
+saveJournal|var jname|void|Used to save a journal to file specified by jname
+playJournal|var jname|void|Used to play back saved journal specified by jname
+playJournal|var jname,var break|void|Used to play back saved journal specified by jname
+addTaggedString|var string|string|Used to tag a string and add it to the NetStringTable
+removeTaggedString|var tag|void|Used to remove a tag string from NetStringTable
+getTaggedString|var tag|string|Used to get the string associated to the tag	
+buildTaggedString|var fmtTag|string|Used to build a tag string with specified fmtTag
+buildTaggedString|var fmtTag,var args...|string|Used to build a tag string with specified fmtTag
+commandToServer|var func|void|Used to issued command specified by func with args on the server
+commandToServer|var func,var args...|void|Used to issued command specified by func with args on the server
+commandToClient|var client,var func|void|Used to issue func on client with args
+commandToClient|var client,var func,var args...|void|Used to issue func on client with args
+allowConnections|bool allow|void|Used to enable/disable connections to the game server
+connect|var addr|void|Used to connect to specified address
+localConnect||void|Used to create a local connection to a server
+startRecord|var filename|void|Used to record a demo
+stopRecord||void|Used to stop recording a previously started demo
+playDemo|var filename|void|Used to play back a recorded demo
+isDemoRecording||int|Used to determine if a demo is currently being recorded
+msg|var id,var msg|void|Used to send a message (event?) to specified object ID
+queryMasterServer|var port,var flags,var gametyoe,var missiontype,var minplayers,var maxplayers,var maxbots,var regionmask,var maxping,var maxcpu,var filterflags|void|Used to query a master server looking for specified information
+cancelServerQuery||void|Used to cancel the current query, if there is anything left on the ping list, it's dropped.
+stopServerQuery||void|Used to Cancel the current query, anything left on the ping list is moved to the finished list as "done".
+startHeartbeat||void|Used to update server to Master Server
+stopHeartbeat||void|Used to stop update t o Master Server
+getServerCount||int|Used to return the number of servers from the Master Server
+setServerInfo|var index|int|Used to update the Master Server with our server information
+showShapeLoad|var shapeName,var faceCamera|void|Used with the show mod to load and test DTS files
+showSequenceLoad|var sequenceFile|void|Used to load a sequence from sequence file for a running show
+showSequenceLoad|var sequenceFile,var sequenceName|void|Used to load a sequence from sequence file for a running show
+showTurnLeft|var amt|void|Used to rotate dts associated with running show to the left 
+showTurnRight|var amt|void|Used to rotate the dts associated with the running show to the right
+showDeleteThread|var threadNum|void|Used to delete thread specified by threadNum
+showSetCamera|bool orbital|void|Used to put camera in a free fly or orbital mode (FALSE = free fly TRUE = orbital)
+showSetKeyboard|bool control|void|Used to enable keyboard control of shape (FALSE = no control TRUE = control)
+showSetLightDirection||void|Used to set the light direction based on camera position
+showSetDetailSlider||void|Used to set the level of detail based on the slider or auto detail
+StripMLControlChars|var string|string|Used to strip ML control characters from string
+setInteriorRenderMode|var modeNum|void|Used to set the detail render level for interiors
+isPointInside|var point|int|Used to determine if point is inside another object
+VectorAdd|var vect1,var vect2|string|Used to add two vectors together
+VectorSub|var vect1,var vect2|string|Used to subtract vect2 from vect1
+VectorScale|var vect,var scalar|string|Used to scale the vector by scalar
+VectorNormalize|var vec|string|Used to Normalize the vec
+VectorDot|var vec1,var vec2|string|Used to return the DotProduct of vect1 and vec2
+VectorCross|var vec1,var vec2|string|Used to get the CrossProduct of vec1 and vec2
+VectorDist|var vect1,var vect2|string|Used to get the distance between vect1 and vect2
+VectorLen|var vec|string|Used to get the length of the vector
+VectorOrthoBasis|var AngAxisF|string|Used to get the OrthoNormal for AngAxisF
+MatrixCreate|var Pos,var Rot|string|Used to create a Matrix from supplied values
+MatrixMultiply|var Left,var Right|string|Used to multiple two matrices
+MatrixMulVector|var transform,var vector|string|Used to multiple a matrix by a vector
+MatrixMulPoint|var transfor,var point|string|Used to multiple a matrix by a point
+getBoxCenter|var Box|string|Used to get the center of a box
+setRandomSeed||void|Used to set the required seed for the MOD
+setRandomSeed|var seed|void|Used to set the required seed for the MOD
+getRandomSeed||int|Used to get the seed for the MOD
+getRandom||int|Used to get a random number
+getRandom|var max|int|Used to get a random number
+getRandom|var min,var max|int|Used to get a random number
+MatrixCreateFromEuler|var xyz|string|Used to create a matrix from given arguments
+mSolveQuadratic|var a,var b,var c|string|Used to solve for  Quadratic
+mSolveCubic|var a,var b,var c,var d|string|Used to solve for a Cube
+mSolveQuartic|var a,var b,var c,var d,var e|string|Used to solve for a Quartic
+mFloor|var float|int|Used to return the largest integral value not  greater than float
+mCeil|var float|int|Used to return the smallest integral value not less than float
+mFloatLength|var float,var numDecimals|int|Used to return float with a numDecimals padding
+mAbs|var float|string|Used to return absolute value of float
+mSqrt|var float|int|Used to return the square root (sqrt) of float
+mPow|var floatA,var floatB|int|Used to get the value of floatA raised to the power of floatB
+mLog|var float|int|Used to return the natural  logarithm of
+mSin|var float|int|Used to return the sine of float measured in radians
+mCos|var float|int|Used to return the cosine of float measured in radians
+mTan|var float|int|Used to return the tangent of float
+mAsin|var float|int|Used to return the arc sine of float
+mAcos|var float|int|Used to return the arc cosine of float
+mAtan|var float|int|Used to return the arc tangent of float
+mRadToDeg|var float|int|Used to convert radiant to degrees
+mDegToRad|var float|int|used to convert degrees to radians
+ValidateMemory||void|Used to validate memory space for the game
+FreeMemoryDump||void|Used to print out some useful  statistics regarding free memory
+dumpMemSnapshot|var filename|void|Used to dump memory statistics to file
+redbookClose||int|Used to close a redbook device
+redbookPlay|var track|int|Used to play a track on a redbook device
+redbookStop||int|Used to stop playing 
+redbookGetTrackCount||int|Used to return the number of redbook tracks
+redbookGetVolume||int|Used to get the current volume level of a redbook device
+redbookSetVolume|var volume|int|Used to set the volume level of a redbook device
+redbookGetDeviceCount||int|Used to return the number of redbook devices
+redbookGetDeviceName|var idx|string|Used to get the device name of specified redbook device index
+redbookGetLastError||string|Used to get the last know error from a redbook device
+videoSetGammaCorrection|var gamma|void|Used to set the Gamma correct
+setDisplayDevice|var deviceName|int|Used to setup the display device with specified parameters
+setDisplayDevice|var deviceName,var width|int|Used to setup the display device with specified parameters
+setDisplayDevice|var deviceName,var width,var height|int|Used to setup the display device with specified parameters
+setDisplayDevice|var deviceName,var width,var height,var bpp|int|Used to setup the display device with specified parameters
+setDisplayDevice|var deviceName,var width,var height,var bpp,var fullScreen|int|Used to setup the display device with specified parameters
+setScreenMode|var width,var height,var bpp,var fullScreen|int|Used to setup the screen with specified parameters
+toggleFullScreen||int|Used to switch between fullscreen mode and windowed mode
+isFullScreen||int|Used to determin if screenmode is set to fullscreen or not
+switchBitDepth||int|Used to switch between 16 and 32 bpp (for fullscreen mode only)
+prevResolution||int|Used to decrease screen resolution to the next lowest resolution
+nextResolution||int|Used to increase screen resolution to the next highest resolution
+getResolution||string|Used to get the current screen resolution
+setResolution|var width,var height,var bpp|int|Used to set the screen resolution to specified parameters
+getDisplayDeviceList||string|Used to get the device name for each display device 
+getResolutionList|var devicename|string|Used to get all possible resolution combinations for specified device
+getVideoDriverInfo||string|Used to get device driver info
+isDeviceFullScreenOnly|var devicename|int|Used to determin if device is capable of fullscreen only
+setVerticalSync|bool on|int|Used to enable/disable the use of Vertical Syn
+profilerEnable|bool enable|void|Used to enable/disable profiling
+profilerDump||void|Used to dump NetStringTable statistics to the console
+profilerDumpToFile|var filename|void|Used to dump NetStringTable statistics to file specified by fileName
+enableWinConsole|bool enabled|void|Used to display the console window
+isJoystickDetected||void|Used to determine if a joystick is present
+getJoystickAxes|var instance|string|Used to get the current Axes of the joystick pointed to by instance
+enableMouse||int|Used to enable DirectInput polling of the mouse device
+disableMouse||void|Used to disable DirectInput polling of the mouse device
+echoInputState||void|Used to display (to the console) the current state of DirectInput, mouse, keyboard and joystick
+getDesktopResolution||string|Used to get the current desktop resolution
+activateKeyboard||int|Used to enable DirectInput polling of the keyboard
+deactivateKeyboard||void|Used to disable DirectInput polling of the keyboard
+GLEnableOutline|bool enabled|void|Used to draw outlines around OpenGL elements (wire mesh?)
+GLEnableMetrics|bool enabled|void|Used to draw a Metrics around each OpenGL entity?
+inputLog|var string|void|Used to enable/disable loggin of DirectInput events to log file specified by string
+launchDedicatedServer|var missionType,var map,var botCount|void|Used to launch a dedicated game server with specified arguments
+isKoreanBuild||string|Silly Korean registry key checker
+debug_debugbreak||void|Used in windows to causes the program to display a dialog box as if it had crashed.  Under Unix we force a segfault.
+resetLighting||void|Used to reset the current lighting (looks to be OGL only)
+getMaxFrameAllocation||void|Used to return the Max Frame Allocation unit
+dumpNetStringTable||void|Used to dump NetStringTable statistics to the console 
+InitContainerRadiusSearch|var xyz,var radius,var mask|void|Used to search for objects of type mask within a radius around the specified coordinates given
+ContainerSearchNext||int|Used to return the next object in a container search
+ContainerSearchCurrDist||int|Used to return the Container Search Distance
+ContainerSearchCurrRadiusDist||int|Used to return the Container Search Radius Distance
+ContainerRayCast|var start_xyz,var end_xyz,var mask|string|Used to find objects of type mask between the two cords supplied
+ContainerRayCast|var start_xyz,var end_xyz,var mask,var exemptobject|string|Used to find objects of type mask between the two cords supplied
+ContainerBoxEmpty|var Mask,var Loc,var Rad|int|Used to see if any objects of given types are present in box of given extent
+ContainerBoxEmpty|var Mask,var Loc,var Rad,var yRad,var zRad|int|Used to see if any objects of given types are present in box of given extent
+pathOnMissionLoadDone||void|Used to construct MOD paths
+makeTestTerrain|var filename|void|Used to make a test terrain file
+getTerrainHeight|var Point2Ipos|int|Used to get the terrain height at the specified position
+setModPaths|string paths|void|Sets the paths for all the modules.

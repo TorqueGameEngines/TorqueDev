@@ -1,0 +1,99 @@
+<!-- 
+			TORQUEDEV INTEGRATED DEVELOPMENT ENVIRONMENT
+			SERIES 1.2
+
+
+			PLEASE NOTE -----------
+					This file is used for the "Welcome to TorqueDev" screen.
+					Its contents should not be modified.
+-->
+<html>
+<head>
+<title>Welcome to TorqueDev</title>
+<style type="text/css">
+	body {
+		background-color: #ffffff;
+		font-family: Arial;
+		font-size: 12px;
+		color: #000000;
+	}
+
+	a {
+		color: #ff0000;
+		text-decoration: none;
+	}
+
+	.top_out {
+		background-color: #6699CC;
+	}
+
+	.top_over {
+		background-color: #3366AA;
+	}
+
+	.toplink {
+		color: #ffffff;
+		text-decoration: none;
+	}
+
+	.recent {
+		background-image: url("{{APP_PATH}}\templates\app_welcome_background.jpg");
+		background-repeat: no-repeat;
+		font-size: 12px;
+	}
+
+	td {
+		font-size: 12px;
+	}
+
+</style>
+</head>
+<body>
+
+<table border=0 cellpadding=0 cellspacing=0 width=640px align=center>
+	<tr>
+		<td><img src="{{APP_PATH}}\templates\app_welcome_logo.jpg"></td>
+	</tr><tr>
+		<td bgcolor=#6699CC>
+			<table border=0 cellpadding=5 cellspacing=0 align=center>
+				<tr>
+					<td class="top_out" onMouseOver="className='top_over'" onMouseOut="className='top_out'"><a href="torquedev://newproject" class="toplink">New Project</a></td>
+
+					<td><font color=#ffffff>|</font></td>
+
+					<td class="top_out" onMouseOver="className='top_over'" onMouseOut="className='top_out'"><a href="torquedev://openproject" class="toplink">Open Project</a></td>
+
+					<td><font color=#ffffff>|</font></td>
+
+					<td class="top_out" onMouseOver="className='top_over'" onMouseOut="className='top_out'"><a href="torquedev://firstrun" class="toplink">Getting Started with TorqueDev</a></td>
+
+				</tr>
+			</table>
+		</td>
+	</tr><tr>
+		<td valign=top width=640 class="recent">
+			<table border=0 cellpadding=0 cellspacing=0 width=90% align=center>
+				<tr>
+					<td width=320px valign=top>
+						<br>
+						<b>Recent Projects:</b>
+						<blockquote>
+							{{RECENTFILES}}
+						</blockquote>
+					</td>
+					<td width=15px valign=top></td>
+					<td width=1px bgcolor=#000000 valign=top></td>
+					<td width=15px valign=top></td>
+					<td width=289px valign=top>
+						<br>
+						{{MOTD}}
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<br><br><center><font size=1>Copyright &copy; 2005 - 2009 <a href="http://www.torquedev.com/" target="_blank" style="text-decoration:none">netMercs</a></font></center>
+
+</body>
+</html>

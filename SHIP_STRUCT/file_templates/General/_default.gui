@@ -1,0 +1,24 @@
+####Empty GUI File####An empty GUI file with a stub and header####TorqueDev Default Templates
+// ============================================================
+// Project            :  {{PROJECT_NAME}}
+// File               :  {{FILE_RELATIVE_PATH}}
+// Copyright          :  
+// Author             :  {{SYSUSER}}
+// Created on         :  {{DATE}}
+//
+// Editor             :  TorqueDev v. {{CW_VERSION}}
+//
+// Description        :  
+//                    :  
+//                    :  
+// ============================================================
+
+new GuiWindowCtrl(MyGuiName) {
+	Profile = "GuiWindowProfile";
+	Position = "0 0";
+	Extent = "200 200";
+	HorizSizing = "width";
+	VertSizing = "height";
+	Visible = "1";
+
+};

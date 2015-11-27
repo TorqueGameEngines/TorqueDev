@@ -1,0 +1,3 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\SamplePlugin.Properties.Resource.resources
+obj\Debug\SamplePlugin.csproj.GenerateResource.Cache

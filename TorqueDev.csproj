@@ -1,0 +1,779 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9E4E8D84-6318-444E-946F-3708708389C9}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>tdev_window.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>TSDev</AssemblyName>
+    <AssemblyOriginatorKeyFile>Codeweaver.snk</AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TSDev</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SignManifests>false</SignManifests>
+    <SignAssembly>false</SignAssembly>
+    <ManifestCertificateThumbprint>F7E41071512359B4930B72ECBCFFBD3F127DE9AF</ManifestCertificateThumbprint>
+    <ManifestKeyFile>Codeweaver_TemporaryKey.pfx</ManifestKeyFile>
+    <TargetZone>LocalIntranet</TargetZone>
+    <GenerateManifests>false</GenerateManifests>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <PublishUrl>ftp://network1.infiniteray.com/htdocs/torquedev.com/codeweaver/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://www.torquedev.com/codeweaver/</InstallUrl>
+    <SupportUrl>http://www.torquedev.com/</SupportUrl>
+    <TargetCulture>en</TargetCulture>
+    <ProductName>Codeweaver</ProductName>
+    <PublisherName>netMercs</PublisherName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.html</WebPage>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActiproSoftware.Shared, Version=1.0.74.0, Culture=neutral, PublicKeyToken=0ff7d8a8c6a689e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\ActiproSoftware.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.SyntaxEditor, Version=3.1.201.0, Culture=neutral, PublicKeyToken=0ff7d8a8c6a689e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\ActiproSoftware.SyntaxEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.WinUICore, Version=1.0.74.0, Culture=neutral, PublicKeyToken=0ff7d8a8c6a689e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\ActiproSoftware.WinUICore.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetMagic, Version=3.0.2.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\DotNetMagic.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Management">
+      <Name>System.Management</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ActiproSoftware.Shared.dll" />
+    <EmbeddedResource Include="ActiproSoftware.SyntaxEditor.dll" />
+    <EmbeddedResource Include="ActiproSoftware.WinUICore.dll" />
+    <EmbeddedResource Include="bookmark.png" />
+    <EmbeddedResource Include="breakpoint.png" />
+    <EmbeddedResource Include="DotNetMagic.dll" />
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAuthUser.resx">
+      <DependentUpon>frmAuthUser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCondBreak.resx">
+      <DependentUpon>frmCondBreak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfig.resx">
+      <DependentUpon>frmConfig.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfigColor.resx">
+      <DependentUpon>frmConfigColor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfigDebugExec.resx">
+      <DependentUpon>frmConfigDebugExec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfigProxy.resx">
+      <DependentUpon>frmConfigProxy.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDebugOutput.resx">
+      <DependentUpon>frmDebugOutput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDebugWizard.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDebugWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDelPrompt.resx">
+      <DependentUpon>frmDelPrompt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmException.resx">
+      <DependentUpon>frmException.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFastTab.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmFastTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFind.resx">
+      <DependentUpon>frmFind.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFindReplace.resx">
+      <DependentUpon>frmFindReplace.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInput.resx">
+      <DependentUpon>frmInput.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIntellisense.resx">
+      <DependentUpon>frmIntellisense.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIntellisensePrompt.resx">
+      <DependentUpon>frmIntellisensePrompt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLicManager.resx">
+      <DependentUpon>frmLicManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoad.resx">
+      <DependentUpon>frmLoad.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMacros.resx">
+      <DependentUpon>frmMacros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMassImport.resx">
+      <DependentUpon>frmMassImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNewItem.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmNewItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNewProject.resx">
+      <DependentUpon>frmNewProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProperties.resx">
+      <DependentUpon>frmProperties.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSelProjType.resx">
+      <DependentUpon>frmSelProjType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSnippetNew.resx">
+      <DependentUpon>frmSnippetNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStartup.resx">
+      <DependentUpon>frmStartup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStartupWizard.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmStartupWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTestForm.resx">
+      <DependentUpon>frmTestForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWait.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmWait.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="line.png" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScrollRTB.resx">
+      <DependentUpon>ScrollRTB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCBrowser.resx">
+      <DependentUpon>UCBrowser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCDebug.resx">
+      <DependentUpon>UCDebug.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCDirectoryCtrl.resx">
+      <DependentUpon>UCDirectoryCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCEditor.resx">
+      <DependentUpon>UCEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCError.resx">
+      <DependentUpon>UCError.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFindResults.resx">
+      <DependentUpon>UCFindResults.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSnippetter.resx">
+      <DependentUpon>UCSnippetter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XParser.resx">
+      <DependentUpon>XParser.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="App.ico" />
+    <None Include="Codeweaver.snk" />
+    <BaseApplicationManifest Include="Properties\app.manifest" />
+    <None Include="Lexer Sources\Parser.frame" />
+    <None Include="Lexer Sources\Scanner.frame" />
+    <None Include="Lexer Sources\TorqueScript.ATG" />
+    <None Include="Resources\folder_new.png" />
+    <None Include="codeweaver.jpg" />
+    <None Include="noolness_colors.jpg" />
+    <None Include="default_colors.jpg" />
+    <None Include="cw_load_std.jpg" />
+    <None Include="cw_load_pro.jpg" />
+    <None Include="Resources\48_code_torque_checkout.png" />
+    <None Include="Resources\16_code_torque.png" />
+    <None Include="Resources\16_code_torque_add.png" />
+    <None Include="Resources\16_code_torque_checkin.png" />
+    <None Include="Resources\16_code_torque_checkout.png" />
+    <None Include="Resources\48_code_torque.jpg" />
+    <None Include="Resources\48_code_torque.png" />
+    <None Include="Resources\48_code_torque_add.png" />
+    <None Include="Resources\48_code_torque_checkin.png" />
+    <None Include="Lexer Sources\Coco.exe" />
+    <None Include="Resources\16_torque_scc_undo_checkout.png" />
+    <None Include="Resources\16_torque_scc.png" />
+    <None Include="Resources\16_torque_scc_add.png" />
+    <None Include="Resources\16_torque_scc_checkin.png" />
+    <None Include="Resources\16_torque_scc_checkout.png" />
+    <None Include="Resources\16_torque_scc_delete.png" />
+    <None Include="Resources\16_torque_scc_diff.png" />
+    <None Include="Resources\16_torque_scc_get.png" />
+    <None Include="Resources\16_torque_scc_history.png" />
+    <None Include="Resources\16_torque_scc_prefs.png" />
+    <None Include="Resources\16_torque_scc_rename.png" />
+    <None Include="cw_load_mng.jpg" />
+    <Content Include="Resources\about.ico" />
+    <None Include="Resources\folder.png" />
+    <None Include="Resources\import1.png" />
+    <None Include="Resources\document_new.png" />
+    <None Include="Resources\document_add.png" />
+    <None Include="Resources\import2.png" />
+    <None Include="Resources\folder_view.png" />
+    <None Include="Resources\disk_blue.png" />
+    <None Include="Resources\save_as.png" />
+    <None Include="Resources\disks.png" />
+    <None Include="Resources\window_star.png" />
+    <None Include="Resources\door.png" />
+    <None Include="Resources\door2.png" />
+    <None Include="Resources\undo.png" />
+    <None Include="Resources\redo.png" />
+    <None Include="Resources\cut.png" />
+    <None Include="Resources\copy.png" />
+    <None Include="Resources\paste.png" />
+    <None Include="Resources\find.png" />
+    <None Include="Resources\replace.png" />
+    <None Include="Resources\document_find.png" />
+    <None Include="Resources\arrow_left_blue.png" />
+    <None Include="Resources\arrow_right_blue.png" />
+    <None Include="Resources\bookmark.png" />
+    <None Include="Resources\stop.png" />
+    <None Include="Resources\bookmark_add.png" />
+    <None Include="Resources\bookmark_up.png" />
+    <None Include="Resources\bookmark_down.png" />
+    <None Include="Resources\bookmark_delete.png" />
+    <None Include="Resources\text_code_colored.png" />
+    <None Include="Resources\preferences.png" />
+    <None Include="Resources\folder_gear.png" />
+    <None Include="Resources\nav_plain_red.png" />
+    <None Include="Resources\media_stop.png" />
+    <None Include="Resources\debug_run.png" />
+    <None Include="Resources\debug_pause.png" />
+    <None Include="Resources\debug_stop.png" />
+    <None Include="Resources\debug_into.png" />
+    <None Include="Resources\debug_step_forward.png" />
+    <None Include="Resources\debug_reset.png" />
+    <None Include="Resources\warning.png" />
+    <None Include="Resources\cw.png" />
+    <None Include="Resources\cw_l.png" />
+    <None Include="Resources\cw_nor.png" />
+    <None Include="Resources\data_table.png" />
+    <None Include="Resources\debug.png" />
+    <None Include="Resources\scroll_view.png" />
+    <None Include="Resources\currency_dollar.png" />
+    <None Include="Resources\download.png" />
+    <None Include="Resources\box_software.png" />
+    <None Include="Resources\window_earth.png" />
+    <None Include="Resources\war.png" />
+    <None Include="Resources\printer3.png" />
+    <None Include="Resources\printer_view.png" />
+    <None Include="Resources\delete2.png" />
+    <None Include="Resources\view.png" />
+    <None Include="Resources\window_split_hor.png" />
+    <None Include="Resources\window_split_ver.png" />
+    <None Include="Resources\selection_view.png" />
+    <None Include="Resources\lock.png" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\nav_right_green.png" />
+    <Content Include="SHIP_STRUCT\EULA.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\cw_about_mng.jpg" />
+    <Content Include="SHIP_STRUCT\file_templates\General\_default.gui">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SHIP_STRUCT\highlight.bin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\cw_about_pro.jpg" />
+    <None Include="Resources\cw_about_std.jpg" />
+    <None Include="Resources\certificate.png" />
+    <None Include="Resources\certificate_new.png" />
+    <None Include="Resources\certificate_ok.png" />
+    <None Include="Resources\certificate_broken.png" />
+    <None Include="Resources\certificate_warning.png" />
+    <None Include="Resources\application_enterprise_certificate_lg.png" />
+    <None Include="Resources\Assembly.ico" />
+    <None Include="Resources\Keyword.ico" />
+    <None Include="Resources\document.png" />
+    <None Include="Resources\document_edit.png" />
+    <None Include="Resources\folder_cubes.png" />
+    <None Include="Resources\gears.png" />
+    <None Include="Resources\unknown.png" />
+    <None Include="Resources\windows.png" />
+    <None Include="Resources\font.png" />
+    <None Include="Resources\window_colors.png" />
+    <None Include="Resources\application_enterprise_certificate.png" />
+    <None Include="Resources\gear_time.png" />
+    <None Include="Resources\data.png" />
+    <None Include="Resources\data_add.png" />
+    <None Include="Resources\data_delete.png" />
+    <None Include="Resources\data_error.png" />
+    <None Include="Resources\data_find.png" />
+    <None Include="Resources\data_next.png" />
+    <None Include="Resources\data_previous.png" />
+    <None Include="Resources\data_time.png" />
+    <None Include="Resources\data_out.png" />
+    <None Include="Resources\data_replace.png" />
+    <None Include="Resources\server_client_exchange.png" />
+    <None Include="Resources\data_copy.png" />
+    <None Include="Resources\server_delete.png" />
+    <None Include="Resources\server_add.png" />
+    <Content Include="SHIP_STRUCT\file_templates\General\_default.t2d">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SHIP_STRUCT\file_templates\General\_default.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SHIP_STRUCT\setupbanner.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SHIP_STRUCT\snippets\Default Snippets\for.snippet">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SHIP_STRUCT\snippets\Default Snippets\switch.snippet">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SHIP_STRUCT\snippets\Default Snippets\while.snippet">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SHIP_STRUCT\__installnotice.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="startupbanner.jpg" />
+    <None Include="Resources\NT3853961.jpg" />
+    <None Include="Resources\switch_bg.png" />
+    <None Include="Resources\codeweaver_logo.jpg" />
+    <None Include="Resources\codeweaver_bg.jpg" />
+    <None Include="Resources\cw_load_std.jpg" />
+    <None Include="Resources\cw_load_rc_std.jpg" />
+    <None Include="Resources\cw_load_rc_pro.jpg" />
+    <Content Include="SHIP_STRUCT\autocomplete.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SHIP_STRUCT\class_t2d.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SHIP_STRUCT\class_tge.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SHIP_STRUCT\class_tse.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SHIP_STRUCT\highlight.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SHIP_STRUCT\tdev_doc.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SHIP_STRUCT\tdev_folder.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SHIP_STRUCT\tdev_window.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SHIP_STRUCT\templates\app_welcome_background.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SHIP_STRUCT\templates\app_welcome_logo.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SHIP_STRUCT\templates\donate.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SHIP_STRUCT\templates\firstrun.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SHIP_STRUCT\templates\firstrun.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SHIP_STRUCT\templates\tdbanner.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SHIP_STRUCT\templates\td_logo.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SHIP_STRUCT\templates\welcome_template.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SHIP_STRUCT\setupbanner_nsis.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tdev_doc.ico" />
+    <Content Include="tdev_folder.ico" />
+    <Content Include="tdev_ico.ico" />
+    <Content Include="tdev_window.ico" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CAsmLoader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CAutoComplete.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CConfig.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CFiles.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CIndicators.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ComboBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CPlugins.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CProject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CSemanticParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CSnippetter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CVerify.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAuthUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCondBreak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfigColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfigDebugExec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfigProxy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDebugOutput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDebugWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDebugWizard.Designer.cs">
+      <DependentUpon>frmDebugWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDelPrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmException.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFastTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFastTab.Designer.cs">
+      <DependentUpon>frmFastTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFindReplace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIntellisense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIntellisensePrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLicManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLicManager.Designer.cs">
+      <DependentUpon>frmLicManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMacros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMassImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewItem.Designer.cs">
+      <DependentUpon>frmNewItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNewProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSelProjType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSnippetNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStartup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStartupWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStartupWizard.Designer.cs">
+      <DependentUpon>frmStartupWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWait.Designer.cs">
+      <DependentUpon>frmWait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Globals.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LicenseManager.cs" />
+    <Compile Include="Parser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyBag.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Scanner.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScrollRTB.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Content Include="SHIP_STRUCT\file_templates\General\_default.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Compile Include="UCBrowser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCDebug.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCDirectoryCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCError.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFindResults.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSnippetter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="XParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="PluginRes\PluginRes.csproj">
+      <Project>{6202CF6A-A1BA-435D-9E9F-5C5431137CFF}</Project>
+      <Name>PluginRes</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

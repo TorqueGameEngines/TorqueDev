@@ -1,0 +1,618 @@
+<SyntaxLanguage Key="TorqueScript" LanguageDefinitionVersion="3.0" Secure="True" xmlns="http://ActiproSoftware/SyntaxEditor/3.0/LanguageDefinition">
+
+	<!-- String Properties -->
+	<Properties>
+		<Property Key="Creator" Value="netMercs // Sam Bacsa" />
+		<Property Key="Copyright" Value="Copyright (c) 2005 netMercs and Sam Bacsa ::sbacsa@netmercs.net::" />
+	</Properties>
+
+	<Triggers>
+		<KeyPressTrigger Key="MemberListTrigger" Character=":">
+			<KeyPressTriggerValidStates>
+				<KeyPressTriggerValidState State="DefaultState" />
+			</KeyPressTriggerValidStates>
+		</KeyPressTrigger>
+	</Triggers>
+
+	<Triggers>
+		<KeyPressTrigger Key="ObjectMemberTrigger" Character=".">
+			<KeyPressTriggerValidStates>
+				<KeyPressTriggerValidState State="DefaultState" />
+			</KeyPressTriggerValidStates>
+		</KeyPressTrigger>
+	</Triggers>
+
+	<Triggers>
+		<KeyPressTrigger Key="InfopopOpenTrigger" Character="(">
+			<KeyPressTriggerValidStates>
+				<KeyPressTriggerValidState State="DefaultState" />
+			</KeyPressTriggerValidStates>
+		</KeyPressTrigger>
+	</Triggers>
+
+	<Triggers>
+		<KeyPressTrigger Key="InfopopCloseTrigger" Character=")">
+			<KeyPressTriggerValidStates>
+				<KeyPressTriggerValidState State="DefaultState" />
+			</KeyPressTriggerValidStates>
+		</KeyPressTrigger>
+	</Triggers>
+
+	<Triggers>
+		<KeyPressTrigger Key="AutoOutdentTrigger" Character="}">
+			<KeyPressTriggerValidStates>
+				<KeyPressTriggerValidState State="DefaultState" />
+			</KeyPressTriggerValidStates>
+		</KeyPressTrigger>
+	</Triggers>
+
+	<!-- Highlighting Styles -->	
+	<Styles>
+		<Style Key="CollapsibleTextStyle" Name="Collapsible Text" ForeColor="Gray" BackColor="Default" Bold="False" Italic="False" Underline="False" />
+		<Style Key="ReservedWordStyle" ForeColor="Blue" BackColor="Default" Bold="False" Italic="False" Underline="False" />
+		<Style Key="FunctionStyle" ForeColor="Red" BackColor="Default" Bold="False" Italic="False" Underline="False" />
+		<Style Key="ConstantStyle" ForeColor="Fuchsia" BackColor="Default" Bold="False" Italic="False" Underline="False" />
+		<Style Key="LocalVariableStyle" ForeColor="Teal" BackColor="Default" Bold="False" Italic="False" Underline="False" />
+		<Style Key="GlobalVariableStyle" ForeColor="DarkRed" BackColor="Default" Bold="False" Italic="False" Underline="False" />
+
+		<Style Key="OperatorStyle" ForeColor="Gray" BackColor="Default" Bold="False" Italic="False" Underline="False" />
+		<Style Key="NumberStyle" ForeColor="Black" BackColor="Default" Bold="False" Italic="False" Underline="False" />
+		<Style Key="StringDelimiterStyle" ForeColor="Magenta" BackColor="Default" Bold="False" Italic="False" Underline="False" />
+		<Style Key="StringDefaultStyle" ForeColor="Magenta" BackColor="Default" Bold="False" Italic="False" Underline="False" />
+
+		<Style Key="RegionStyle" ForeColor="Black" BackColor="LightGray" Bold="False" Italic="False" Underline="False" />
+		<Style Key="DeclareStyle" ForeColor="DarkBlue" BackColor="Default" Bold="True" Italic="False" Underline="False" />
+
+		<Style Key="TaggedStringDelimiterStyle" ForeColor="Purple" BackColor="Default" Bold="False" Italic="False" Underline="False" />
+		<Style Key="TaggedStringDefaultStyle" ForeColor="Purple" BackColor="Default" Bold="False" Italic="False" Underline="False" />
+		
+		<Style Key="CommentDelimiterStyle" ForeColor="Green" BackColor="Default" Bold="False" Italic="False" Underline="False" />
+		<Style Key="CommentDefaultStyle" ForeColor="Green" BackColor="Default" Bold="False" Italic="False" Underline="False" />
+		<Style Key="SpecialCommentDelimiterStyle" ForeColor="DarkGray" BackColor="Default" Bold="False" Italic="False" Underline="False" />
+		<Style Key="SpecialCommentDefaultStyle" ForeColor="DarkGray" BackColor="Default" Bold="False" Italic="False" Underline="False" />
+
+		<Style Key="MemberTokenStyle" ForeColor="Blue" BackColor="Default" Bold="True" Italic="False" Underline="False" />
+	</Styles>
+	
+	<!-- States -->
+	<States>
+		<!-- Code -->
+		<State Key="DefaultState">
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<!-- Whitespace -->
+				<RegexPatternGroup TokenKey="WhitespaceToken" PatternValue="{WhitespaceMacro}+" IsWhitespace="True" />
+				<!-- Line Terminators -->
+				<RegexPatternGroup TokenKey="LineTerminatorToken" PatternValue="{LineTerminatorMacro}" IsWhitespace="True" />
+				<!-- Dividers -->
+
+				<!-- Brackets -->
+				<ExplicitPatternGroup Key="OpenParenthesisPatternGroup" TokenKey="OpenParenthesisToken" PatternValue="(" EndBracket="CloseParenthesisPatternGroup" />
+				<ExplicitPatternGroup Key="CloseParenthesisPatternGroup" TokenKey="CloseParenthesisToken" PatternValue=")" StartBracket="OpenParenthesisPatternGroup" />
+				<ExplicitPatternGroup Key="OpenCurlyBracePatternGroup" TokenKey="OpenCurlyBraceToken" PatternValue="{" EndBracket="CloseCurlyBracePatternGroup" />
+				<ExplicitPatternGroup Key="CloseCurlyBracePatternGroup" TokenKey="CloseCurlyBraceToken" PatternValue="}" StartBracket="OpenCurlyBracePatternGroup" />
+				<ExplicitPatternGroup Key="OpenSquareBracePatternGroup" TokenKey="OpenSquareBraceToken" PatternValue="[" EndBracket="CloseSquareBracePatternGroup" />
+				<ExplicitPatternGroup Key="CloseSquareBracePatternGroup" TokenKey="CloseSquareBraceToken" PatternValue="]" StartBracket="OpenSquareBracePatternGroup" />
+				<!-- Reserved Words -->
+				<ExplicitPatternGroup TokenKey="FunctionStartToken" Style="ReservedWordStyle" LookAhead="{NonWordMacro}">
+					<ExplicitPatterns>
+						function
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+
+				<!-- Datablock and Class Handlings -->
+				<RegexPatternGroup TokenKey="DatablockStartToken" Style="ReservedWordStyle"  PatternValue="\bdatablock\b\s*\b[A-Z_][A-Z0-9_]*\b" />
+				<RegexPatternGroup TokenKey="ClassStartToken" Style="ReservedWordStyle"  PatternValue="\bnew\b\s*\b[A-Z_][A-Z0-9_]*\b" />
+				
+				<ExplicitPatternGroup TokenKey="ReservedWordToken" Style="ReservedWordStyle" LookAhead="{NonWordMacro}">
+					<ExplicitPatterns>
+						for if break default switch case return else package or switch$ while
+						TAB NL SPC continue
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- Primative Types -->
+				<ExplicitPatternGroup TokenKey="PrimativeTypeToken" Style="ReservedWordStyle" LookAhead="{NonWordMacro}">
+					<ExplicitPatterns />
+				</ExplicitPatternGroup>
+				<!-- Null -->
+				<ExplicitPatternGroup TokenKey="NullToken" Style="ReservedWordStyle" PatternValue="NULL" LookAhead="{NonWordMacro}" />
+				<!-- Booleans -->
+				<ExplicitPatternGroup TokenKey="BooleanToken" Style="ReservedWordStyle" LookAhead="{NonWordMacro}">
+					<ExplicitPatterns>
+						true false
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- Functions -->
+				<ExplicitPatternGroup TokenKey="IdentifierToken" Style="FunctionStyle" LookAhead="{NonWordMacro}">
+					<ExplicitPatterns>
+						OpenALInitDriver
+						OpenALShutdownDriver
+						OpenALRegisterExtensions
+						alGetString
+						alxCreateSource
+						alxSourcef
+						alxSource3f
+						alxSourcei
+						alxGetSourcef
+						alxGetSource3f
+						alxGetSourcei
+						alxPlay
+						alxStop
+						alxStopAll
+						alxIsPlaying
+						alxListener
+						alListener3f
+						alxGetListenerf
+						alxGetListener3f
+						alxGetListeneri
+						alxGetChannelVolume
+						alxSetChannelVolume
+						dumpConsoleClasses
+						expandFilename
+						strcmp
+						stricmp
+						strlen
+						strstr
+						strpos
+						ltrim
+						rtrim
+						trim
+						sripChars
+						strlwr
+						strupr
+						strchr
+						strreplace
+						getSubStr
+						getWord
+						getWords
+						setWord
+						removeWord
+						getWordCount
+						getField
+						getFields
+						setField
+						removeField
+						getFieldCount
+						getRecord
+						getRecords
+						setRecord
+						removeRecord
+						getRecordCount
+						firstWord
+						restWords
+						detag
+						getTag
+						echo
+						warn
+						error
+						expandEscape
+						collapseEscape
+						quit
+						call
+						compile
+						exec
+						export
+						deleteVariables
+						trace
+						debug
+						findFirstFile
+						findNextFile
+						getFileCount
+						getFileCRC
+						isFile
+						isWriteableFileName
+						fileExt
+						fileBase
+						fileName
+						filePath
+						nextToken
+						setLogMode
+						setEchoFileLoads
+						backtrace
+						isPackage
+						activatePackage
+						deactivatePackage
+						nameToID
+						isObject
+						cancel
+						isEventPending
+						schedule
+						deleteDataBlocks
+						telnetSetParameters
+						dbgSetParameters
+						dnetSetLogging
+						setNPatch
+						toggleNPatch
+						increaseNPatch
+						decreaseNPatch
+						setOpenGLMipReduction
+						setOpenGLSkyMipReduction
+						setOpenGLInteriorMipReduction
+						setOpenGLTextureCompressionHint
+						setOpenGLAnisotropy
+						clearTextureHolds
+						addMaterialMapping
+						aiConnect
+						aiAddPlayer
+						setPowerAudioProfiles
+						gotoWebPage
+						deactivateDirectInput
+						activateDirectInput
+						stripTrailingSpaces
+						setDefaultFov
+						setZoomSpeed
+						setFov
+						screenShot
+						panoramaScreenShot
+						purgeResources
+						lightScene
+						flushTextureCache
+						getControlObjectAltitude
+						getControlObjectSpeed
+						containerFindFirst
+						containerFindNext
+						snapToggle
+						getVersionNumber
+						getVersionString
+						getCompileTimeString
+						getBuildString
+						getSimTime
+						getRealTime
+						setNetPort
+						lockMouse
+						rebuildModPaths
+						getModPaths
+						createCanvas
+						saveJournal
+						playJournal
+						addTaggedString
+						removeTaggedString
+						getTaggedString
+						buildTaggedString
+						commandToServer
+						commandToClient
+						allowConnections
+						connect
+						localConnect
+						startRecord
+						stopRecord
+						playDemo
+						isDemoRecording
+						msg
+						queryMasterServer
+						cancelServerQuery
+						stopServerQuery
+						startHeartbeat
+						stopHeartbeat
+						getServerCount
+						setServerInfo
+						showShapeLoad
+						showSequenceLoad
+						showTurnLeft
+						showTurnRight
+						showDeleteThread
+						showSetCamera
+						showSetKeyboard
+						showSetLightDirection
+						showSetDetailSlider
+						StripMLControlChars
+						setInteriorRenderMode
+						isPointInside
+						VectorAdd
+						VectorSub
+						VectorScale
+						VectorNormalize
+						VectorDot
+						VectorCross
+						VectorDist
+						VectorLen
+						VectorOrthoBasis
+						MatrixCreate
+						MatrixMultiply
+						MatrixMulVector
+						MatrixMulPoint
+						getBoxCenter
+						setRandomSeed
+						getRandomSeed
+						getRandom
+						MatrixCreateFromEuler
+						mSolveQuadratic
+						mSolveCubic
+						mSolveQuartic
+						mFloor
+						mCeil
+						mFloatLength
+						mAbs
+						mSqrt
+						mPow
+						mLog
+						mSin
+						mCos
+						mTan
+						mAsin
+						mAcos
+						mAtan
+						mRadToDeg
+						mDegToRad
+						ValidateMemory
+						FreeMemoryDump
+						dumpMemSnapshot
+						redbookClose
+						redbookPlay
+						redbookStop
+						redbookGetTrackCount
+						redbookGetVolume
+						redbookSetVolume
+						redbookGetDeviceCount
+						redbookGetDeviceName
+						redbookGetLastError
+						videoSetGammaCorrection
+						setDisplayDevice
+						setScreenMode
+						toggleFullScreen
+						isFullScreen
+						switchBitDepth
+						prevResolution
+						nextResolution
+						getResolution
+						setResolution
+						getDisplayDeviceList
+						getResolutionList
+						getVideoDriverInfo
+						isDeviceFullScreenOnly
+						setVerticalSync
+						profilerEnable
+						profilerDump
+						profilerDumpToFile
+						enableWinConsole
+						isJoystickDetected
+						getJoystickAxes
+						enableMouse
+						disableMouse
+						echoInputState
+						getDesktopResolution
+						activateKeyboard
+						deactivateKeyboard
+						GLEnableOutline
+						GLEnableMetrics
+						inputLog
+						launchDedicatedServer
+						isKoreanBuild
+						debug_debugbreak
+						resetLighting
+						getMaxFrameAllocation
+						dumpNetStringTable
+						InitContainerRadiusSearch
+						ContainerSearchNext
+						ContainerSearchCurrDist
+						ContainerSearchCurrRadiusDist
+						ContainerRayCast
+						ContainerBoxEmpty
+						pathOnMissionLoadDone
+						makeTestTerrain
+						getTerrainHeight
+						setModPaths
+						eval
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- Constants -->
+				<ExplicitPatternGroup TokenKey="ConstantToken" Style="ConstantStyle" LookAhead="{NonWordMacro}">
+					<ExplicitPatterns />
+				</ExplicitPatternGroup>
+				<!-- Variables -->
+				<RegexPatternGroup TokenKey="GlobalVariableToken" PatternValue="\$ (_ | {AlphaMacro})({WordMacro})*" Style="GlobalVariableStyle" />
+				<RegexPatternGroup TokenKey="LocalVariableToken" PatternValue="\% (_ | {AlphaMacro})({WordMacro})*" Style="LocalVariableStyle" />
+				<!-- Identifier -->
+				<RegexPatternGroup TokenKey="IdentifierToken" PatternValue="(_ | {AlphaMacro})({WordMacro})*" />
+				<!-- Class descriptors -->
+				<ExplicitPatternGroup TokenKey="MemberToken" Style="MemberTokenStyle">
+					<ExplicitPatterns>
+						::
+						.
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- Operators -->
+				<ExplicitPatternGroup TokenKey="OperatorToken" Style="OperatorStyle">
+					<ExplicitPatterns>
+						= + - * / % += -= *= /= %= ++ -- ~ |
+						&amp;
+						^
+						&lt;&lt;
+						&gt;&gt;
+						|= 
+						&amp;= 
+						^= 
+						&lt;&lt;=
+						&gt;&gt;= 
+						@ ! 
+						&amp;&amp; 
+						|| == != 
+						&lt; 
+						&gt; 
+						&lt;= 
+						&gt;= 
+						$= !$=
+					</ExplicitPatterns>
+				</ExplicitPatternGroup>
+				<!-- Numbers -->
+				<RegexPatternGroup TokenKey="RealNumberToken" Style="NumberStyle" LookAhead="{NonWordMacro}">
+					<RegexPattern Value="{DigitMacro}* \. {DigitMacro}+ ([Ee] [\+\-]? {DigitMacro}+)?" />
+					<RegexPattern Value="{DigitMacro}+ [Ee] [\+\-]? {DigitMacro}+" />
+				</RegexPatternGroup>
+				<RegexPatternGroup TokenKey="IntegerNumberToken" Style="NumberStyle" PatternValue="{DigitMacro}+" LookAhead="{NonWordMacro}" />
+				<RegexPatternGroup TokenKey="HexIntegerNumberToken" Style="NumberStyle" PatternValue="0 [xX] {HexDigitMacro}+" LookAhead="{NonWordMacro}" />
+			</PatternGroups>
+			<!-- Child States -->
+			<ChildStates>
+				<ChildState Key="SingleQuoteStringState" />
+				<ChildState Key="DoubleQuoteStringState" />
+				<ChildState Key="DeclareState" />
+				<ChildState Key="RegionState" />
+				<ChildState Key="PreProcState" />
+				<ChildState Key="MultiLineCommentState" />
+				<ChildState Key="SpecialCommentState" />
+				<ChildState Key="CommentState" />
+			</ChildStates>
+		</State>
+
+		<!-- Single Quote Strings -->
+		<State Key="SingleQuoteStringState" TokenKey="SingleQuoteStringDefaultToken" Style="TaggedStringDefaultStyle">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope>
+					<ExplicitPatternGroup Type="StartScope" TokenKey="SingleQuoteStringStartToken" Style="TaggedStringDelimiterStyle" PatternValue="'" />
+					<RegexPatternGroup Type="EndScope" TokenKey="SingleQuoteStringEndToken" Style="TaggedStringDelimiterStyle" PatternValue="{LineTerminatorMacro}|[\']" />	
+				</Scope>
+			</Scopes>
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<RegexPatternGroup TokenKey="SingleQuoteStringEscapedCharacterToken" PatternValue="\\." />
+				<RegexPatternGroup TokenKey="SingleQuoteStringWhitespaceToken" PatternValue="{WhitespaceMacro}+" IsWhitespace="True" />
+				<RegexPatternGroup TokenKey="SingleQuoteStringWordToken" PatternValue="\w+" />
+				<RegexPatternGroup TokenKey="SingleQuoteStringDefaultToken" PatternValue="[^'][{NonLineTerminatorMacro}]" />
+			</PatternGroups>
+		</State>
+		
+		<!-- Double Quote Strings -->
+		<State Key="DoubleQuoteStringState" TokenKey="DoubleQuoteStringDefaultToken" Style="StringDefaultStyle">
+			<!-- Scopes -->
+			<Scopes>
+				
+				<Scope>
+					<ExplicitPatternGroup Type="StartScope" TokenKey="DoubleQuoteStringStartToken" Style="StringDelimiterStyle" PatternValue="&quot;" />
+					<RegexPatternGroup Type="EndScope" TokenKey="DoubleQuoteStringEndToken" Style="StringDelimiterStyle" PatternValue="{LineTerminatorMacro}|[\&quot;]"  />
+<!--					<ExplicitPatternGroup Type="EndScope" TokenKey="DoubleQuoteStringEndToken" Style="StringDelimiterStyle" PatternValue="&quot;" /> -->
+				</Scope>
+			</Scopes>
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<RegexPatternGroup TokenKey="DoubleQuoteStringEscapedCharacterToken" PatternValue="\\." />
+				<RegexPatternGroup TokenKey="DoubleQuoteStringWhitespaceToken" PatternValue="{WhitespaceMacro}+" IsWhitespace="True" />
+				<RegexPatternGroup TokenKey="DoubleQuoteStringWordToken" PatternValue="\w+" />
+				<RegexPatternGroup TokenKey="DoubleQuoteStringDefaultToken" PatternValue="[^\&quot;][{NonLineTerminatorMacro}]" />
+				<!-- <RegexPatternGroup TokenKey="DoubleQuoteStringDefaultToken" PatternValue="[^\&quot;]" /> -->
+				<!-- <RegexPatternGroup TokenKey="DoubleQuoteStringLineTerminatorToken" PatternValue="{LineTerminatorMacro}" LookAhead="{LineTerminatorWhitespaceMacro}*" IsWhitespace="True" /> -->
+			</PatternGroups>
+		</State>
+
+		<!-- Regions -->
+		<State Key="RegionState" TokenKey="RegionToken" Style="RegionStyle">
+			<Scopes>
+				<Scope>
+					<ExplicitPatternGroup Type="StartScope" TokenKey="RegionStartToken" Style="RegionStyle" PatternValue="//__region" CaseSenstivity="AutoCorrect" LookAhead="{NonWordMacro}" />
+					<RegexPatternGroup Type="EndScope" TokenKey="RegionTokenEnd" Style="DefaultStyle" PatternValue="{LineTerminatorMacro}" IsWhitespace="True" />
+				</Scope>
+				<Scope>
+					<ExplicitPatternGroup Type="StartScope" TokenKey="RegionEndToken" Style="RegionStyle" PatternValue="//__end" CaseSensitivty="AutoCorrect" LookAhead="{NonWordMacro}" />
+					<RegexPatternGroup Type="EndScope" TokenKey="RegionTokenEnd" Style="DefaultStyle" PatternValue="{LineTerminatorMacro}" IsWhitespace="True" />
+				</Scope>
+			</Scopes>
+			<!-- Pattern Groups -->
+			<PatternGroups>
+				<RegexPatternGroup TokenKey="RegionDefaultToken" PatternValue="{NonLineTerminatorMacro}+" />
+			</PatternGroups>
+		</State>
+
+		<!-- Declares -->
+		<State Key="DeclareState" TokenKey="DeclareToken" Style="DeclareStyle">
+			<Scopes>
+				<Scope>
+					<RegexPatternGroup Type="StartScope" TokenKey="DeclareStartToken" Style="DeclareStyle" PatternValue="//#\s*\bDECLARE\b\s*.*" LookAhead="{NonWordMacro}" />
+					<RegexPatternGroup Type="EndScope" TokenKey="DeclareEndToken" Style="DeclareStyle" PatternValue="{LineTerminatorMacro}" IsWhitespace="True" />
+				</Scope>
+			</Scopes>
+			<PatternGroups>
+				<RegexPatternGroup TokenKey="DeclareDefaultToken" PatternValue="{NonLineTerminatorMacro}+" />
+			</PatternGroups>
+		</State>
+
+		<!-- Pre-Processors -->
+		<State Key="PreProcState" TokenKey="PreProcToken" Style="RegionStyle">
+			<Scopes>
+				<Scope>
+					<RegexPatternGroup Type="StartScope" TokenKey="PreProcStartToken" Style="RegionStyle" PatternValue="//__.*" LookAhead="{NonWordMacro}" />
+					<RegexPatternGroup Type="EndScope" TokenKey="PreProcEndToken" Style="DefaultStyle" PatternValue="{LineTerminatorMacro}" IsWhitespace="True" />
+				</Scope>
+			</Scopes>
+			<PatternGroups>
+				<RegexPatternGroup TokenKey="PreProcDefaultToken" PatternValue="{NonLineTerminatorMacro}+" />
+			</PatternGroups>
+		</State>
+
+		<!-- Special Comments -->
+		<State Key="SpecialCommentState" TokenKey="SpecialCommentDefaultToken" Style="SpecialCommentDefaultStyle">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope>
+					<ExplicitPatternGroup Type="StartScope" TokenKey="SpecialCommentStartToken" Style="SpecialCommentDelimiterStyle" PatternValue="///" />
+					<RegexPatternGroup Type="EndScope" TokenKey="SpecialCommentEndToken" Style="SpecialCommentDelimiterStyle" PatternValue="{LineTerminatorMacro}" IsWhitespace="True" />	
+				</Scope>
+			</Scopes>
+			<!-- Patterns Groups -->
+			<PatternGroups>			 
+				<RegexPatternGroup TokenKey="CommentWhitespaceToken" PatternValue="{WhitespaceMacro}+" IsWhitespace="True" />
+				<!-- <RegexPatternGroup TokenKey="CommentLineTerminatorToken" PatternValue="{LineTerminatorMacro}" LookAhead="{LineTerminatorWhitespaceMacro}* // [^/]" IsWhitespace="True" /> -->
+				<RegexPatternGroup TokenKey="CommentWordToken" PatternValue="\w+" />
+				<RegexPatternGroup TokenKey="CommentDefaultToken" PatternValue="{NonLineTerminatorMacro}" />
+			</PatternGroups>
+		</State>
+		
+		<!-- Comments -->
+		<State Key="CommentState" TokenKey="CommentDefaultToken" Style="CommentDefaultStyle">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope>
+					<ExplicitPatternGroup Type="StartScope" TokenKey="CommentStartToken" Style="CommentDelimiterStyle" PatternValue="//" />
+					<RegexPatternGroup Type="EndScope" TokenKey="CommentEndToken" Style="CommentDelimiterStyle" PatternValue="{LineTerminatorMacro}" IsWhitespace="True" />	
+				</Scope>
+			</Scopes>
+			<!-- Patterns Groups -->
+			<PatternGroups>			 
+				<RegexPatternGroup TokenKey="CommentWhitespaceToken" PatternValue="{WhitespaceMacro}+" IsWhitespace="True" />
+				<!-- <RegexPatternGroup TokenKey="CommentLineTerminatorToken" PatternValue="{LineTerminatorMacro}" LookAhead="{LineTerminatorWhitespaceMacro}* // [^/]" IsWhitespace="True" /> -->
+				<RegexPatternGroup TokenKey="CommentWordToken" PatternValue="\w+" />
+				<RegexPatternGroup TokenKey="CommentDefaultToken" PatternValue="{NonLineTerminatorMacro}" />
+			</PatternGroups>
+		</State>
+
+		<!-- MultiLine Comments -->
+		<State Key="MultiLineCommentState" TokenKey="MultiLineCommentDefaultToken" Style="CommentDefaultStyle">
+			<!-- Scopes -->
+			<Scopes>
+				<Scope BracketHighlight="True">
+					<ExplicitPatternGroup Type="StartScope" TokenKey="MultiLineCommentStartToken" Style="CommentDelimiterStyle" PatternValue="/*" />
+					<ExplicitPatternGroup Type="EndScope" TokenKey="MultiLineCommentEndToken" Style="CommentDelimiterStyle" PatternValue="*/" />	
+				</Scope>
+			</Scopes>
+			<!-- Patterns Groups -->
+			<PatternGroups>
+				<RegexPatternGroup TokenKey="MultiLineCommentWhitespaceToken" PatternValue="{WhitespaceMacro}+" IsWhitespace="True" />
+				<!-- <RegexPatternGroup TokenKey="MultiLineCommentLineTerminatorToken" PatternValue="{LineTerminatorMacro}" IsWhitespace="True" />
+				<RegexPatternGroup TokenKey="MultiLineCommentURLToken" Style="CommentURLStyle" PatternValue="{URLMacro}" /> -->
+				<RegexPatternGroup TokenKey="MultiLineCommentWordToken" PatternValue="\w+" />
+				<RegexPatternGroup TokenKey="MultiLineCommentDefaultToken" PatternValue="[^*]" />
+			</PatternGroups>
+		</State>
+	</States>
+
+
+	
+					
+	<!-- Example Text -->
+	<ExampleText>
+		<![CDATA[
+// A simple function in TorqueScript
+
+function UpdateLocalGlobal(%variable1, %variable2) {
+	if (%variable1 $!= %variable2) {
+		return %variable1;
+	} else {
+		$GLOBAL = %variable2;
+		return $GLOBAL;
+	}
+}
+
+]]>
+	</ExampleText>
+		
+</SyntaxLanguage>

@@ -1,0 +1,8 @@
+bin\Debug\PluginRes.dll
+bin\Debug\PluginRes.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\PluginRes.dll
+obj\Debug\PluginRes.pdb
+bin\Release\PluginRes.dll
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\PluginRes.dll

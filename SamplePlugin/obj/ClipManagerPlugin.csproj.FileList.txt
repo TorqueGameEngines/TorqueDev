@@ -1,0 +1,9 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\ClipManagerPlugin.Properties.Resource.resources
+obj\Debug\ClipManagerPlugin.ClipManagerWindow.resources
+obj\Debug\ClipManagerPlugin.csproj.GenerateResource.Cache
+..\bin\Debug\plugins\tdp_clipmgr.dll
+..\bin\Debug\plugins\tdp_clipmgr.pdb
+obj\Debug\tdp_clipmgr.dll
+obj\Debug\tdp_clipmgr.pdb
+obj\Debug\ClipManagerPlugin.ClipManagerConfig.resources

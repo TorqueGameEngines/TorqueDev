@@ -1,0 +1,125 @@
+<html>
+<title>Welcome to TorqueDev</title>
+<style>
+a {
+	text-decoration:none;
+}
+
+td {
+	font-size:12px;
+}
+</style>
+<body bgcolor=#ffffff text=#000000 link=#ff0000 vlink=#ff0000 alink=#ff0000 style="font-size:12px;font-family:verdana" topmargin=0 leftmargin=0>
+
+<table border=0 cellpadding=0 cellspacing=0 width=640px align=center>
+	<tr>
+		<td valign=top align=left><img src="{{APP_PATH}}\templates\td_logo.jpg"></td>
+	</tr><tr>
+		<td valign=top>
+			<br><br>
+			<table border=0 cellpadding=0 cellspacing=0 width=100%>
+				<tr>
+					<td width=251px valign=top>
+						<img src="{{APP_PATH}}\templates\firstrun.jpg">
+					</td>
+					<td width=10px></td>
+					<td valign=top align=left>
+						<h3>Welcome to TorqueDev</h3>
+						<div align=right><a href="http://torque.netmercs.net/donate_redir.php" target="_blank"><img src="{{APP_PATH}}\templates\donate.gif" border=0></a></div>
+						<blockquote>
+							<h3>PLEASE READ THIS FILE THOROGHLY!</h3><br>
+							<br>
+							I am absolutely ecstatic that you've chosen TorqueDev for your development needs.  I've tried to make this IDE <i>the best</i> that it can possibly be, and I hope that you'll agree with me when I say that this is a powerful tool with a myriad of features awaiting to be utilized to its full extent.<br>
+							<br>
+							This version is a "delta"; that is to say, it has passed out of the beta stage and is now what one would call "release candidate".  The only portion of this IDE still in beta is its plugin architecture, which is why I've opted not to make the final release yet.  For those of you not looking to extend the IDE by writing plugins, then you need not worry about the "delta-ness" of this program.
+							<br><br><br>
+							What's new in <b>1.2 Delta RELEASE 3</b>?
+							<ul>
+								<li> Enhanced plugin functions support
+								<li> Fixed the bugs listed in Mantis
+								<li> Changed the way functions are commented
+								<li> Added "special comments" to syntax highlighting configuration
+								<li> Added support for different project types (TGE, TSE, and T2D)
+								<li> Moved "classinfo.txt" into the type-specific files: class_t2d.txt, class_tge.txt, and class_tse.txt
+								<li> Added "eval" to keyword listing and default infopop
+								<li> Added function list dropdown to editor
+							</ul>
+							If you're looking to get started immediately, you can go straight to the <a href="torquedev://welcome/">welcome screen</a> which can point you in the right direction to start.
+						</blockquote>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr><tr>
+		<td valign=top>
+			<h2>Basic Documentation</h2>
+			<blockquote>
+				<!-- -->
+				<h3>Function Descriptions</h3>
+				If you want to add a custom description to a function which appears in infopop tooltips and the explorer toolbox, you can do so by adding "special comments" above your function declaration.  They must be <i>directly adjacent</i> to your function declaration.  They may span multiple lines.  Each line entry will be on a separate line when the infopop is displayed:
+				<blockquote>
+					<pre>/// Initializes the debugger<br>/// and does other random stuff<br>function InitDebugger() {</pre>
+					<pre>    [...]</pre>
+					<pre>}
+				</blockquote>
+
+				Note that the comment regions start with "///", and not "//".  The default syntax highlighting schema colors special comments dark gray.
+
+				<!-- -->
+				<br><br><br><br>
+				<h3>Code Regions</h3>
+				TorqueDev supports collapsable code regions similar to Visual Studio.  If you would like to create an auto-collapsed, labelled code region, place the code you wish to collapse between the following blocks:
+				<blockquote>
+					<pre>//__region My Region</pre>
+					<pre> [...] </pre>
+					<pre>//__end</pre>
+				</blockquote>
+
+				Where "My Region" can be any label you want, or nothing at all.
+
+				<!-- -->
+				<br><br><br><br>
+				<h3>Interactive Debugging</h3>
+				If you wish to use TorqueDev for interactive debugging, you must merge the <a href="http://www.garagegames.com/index.php?sec=mg&mod=resource&page=view&qid=8294" target="_blank">Enhanced TelnetDebugger</a> by Tom Spilman into your Torque engine codebase.  Not doing so will cause the debugging feature to act unpredictably and is not recommended.<br>
+				<br>
+				To enable debugging, right-click on the project name in the project explorer and select properties.  Fill out the dialog, correctly populating all the necessary debug fields, and then set "Enable Debugging" to "True".  Once set, the Debug menu should become available and you may now debug your project.
+
+				<!-- -->
+				<br><br><br><br>
+				<h3>Variable-Level Auto-Completion</h3>
+				If you wish to fully utilize variable-level completion, you must declare the type of your variables.  In local scope, you may do so like below:
+				<blockquote>
+					<pre>//__decl ObjectType %variable</pre>
+				</blockquote>
+
+				Where "ObjectType" is the type of object you wish to make "%variable".  From this point forward, in local scope, you may use %variable<b>.</b> to perform object-level auto-completion.
+
+
+				<!-- -->
+				<br><br><br><br>
+				<h3>Declared Object Auto-Completion</h3>
+				Any objects declared using the <span style="font-family:courier new">new ObjectType(ObjectName)</span> method are automatically declared and can be dereferenced by using the scope resolution operator (<b>::</b>) or the object member operator (<b>.</b>).
+
+
+				<!-- -->
+				<br><br><br><br>
+				<h3>Infopop</h3>
+				Infopop tooltips are automatically displayed when you type a parenthese after a built-in or user-defined function.  You may also press <i>Ctrl+Shift+Space</i> to accomplish the same task so long as you are within the parenthese boundaries of the function call.  Newly-defined functions will be added to the global token listing upon saving the file.
+
+
+				<!-- -->
+				<br><br><br><br>
+				<h3>F4 Object Browser</h3>
+				You can browse all imported objects by pressing the F4 key at any time in the editor.  You can scroll through the prompt using the <i>up</i> and <i>down</i> arrows.  You can enter a class and browse its functions by pressing <i>Tab</i> or the <i>right arrow</i> key.  In the function listing, you can jump back to the class listing by pressing the <i>left arrow</i> key.  Pressing <i>enter</i> will paste the class or function name into the editor.  If the cursor is directly adjacent to or directly on top of a local or global variable when F4 is pressed, pressing <i>enter</i> on a class in the list will automatically generate a <span style="font-family:courier new">//__decl</span> entry on the line above the variable.  This can help make declaring variables quick, easy, and efficient.
+
+			</blockquote>
+			<br><br><br>
+			For a more complete feature listing and documentation, please refer to the <a href="http://torque.netmercs.net/" target="_blank">TorqueDev</a> website.  As always, your <a href="http://torque.netmercs.net/donate_redir.php" target="_blank">donations</a> are appreciated and help keep this software free.<br>
+			<br>
+			You may <a href="torquedev://welcome/">get started</a> now.
+		</td>
+	</tr>
+</table>
+<br><br><center><font size=1>Copyright &copy; 2005 <a href="http://torque.netmercs.net/" target="_blank" style="text-decoration:none">netMercs</a></font></center>
+
+</body></html>

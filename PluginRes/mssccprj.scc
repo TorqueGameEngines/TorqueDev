@@ -1,0 +1,5 @@
+SCC = This is a Source Code Control file
+
+[PluginRes.csproj]
+SCC_Aux_Path="\\chilly\scc$"
+SCC_Project_Name="$/Codeweaver.root/Codeweaver/PluginRes", CCAAAAAA

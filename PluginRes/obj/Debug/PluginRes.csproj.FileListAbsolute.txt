@@ -1,0 +1,10 @@
+D:\BACKUP\Documents\Visual Studio 2005\Projects\Codeweaver.root\Codeweaver\PluginRes\bin\Debug\PluginRes.dll
+D:\BACKUP\Documents\Visual Studio 2005\Projects\Codeweaver.root\Codeweaver\PluginRes\bin\Debug\PluginRes.pdb
+D:\BACKUP\Documents\Visual Studio 2005\Projects\Codeweaver.root\Codeweaver\PluginRes\obj\Debug\ResolveAssemblyReference.cache
+D:\BACKUP\Documents\Visual Studio 2005\Projects\Codeweaver.root\Codeweaver\PluginRes\obj\Debug\PluginRes.dll
+D:\BACKUP\Documents\Visual Studio 2005\Projects\Codeweaver.root\Codeweaver\PluginRes\obj\Debug\PluginRes.pdb
+F:\StorageDrive\BACKUP\Documents\Visual Studio 2005\Projects\Codeweaver.root\Codeweaver\PluginRes\bin\Debug\PluginRes.dll
+F:\StorageDrive\BACKUP\Documents\Visual Studio 2005\Projects\Codeweaver.root\Codeweaver\PluginRes\bin\Debug\PluginRes.pdb
+F:\StorageDrive\BACKUP\Documents\Visual Studio 2005\Projects\Codeweaver.root\Codeweaver\PluginRes\obj\Debug\PluginRes.dll
+F:\StorageDrive\BACKUP\Documents\Visual Studio 2005\Projects\Codeweaver.root\Codeweaver\PluginRes\obj\Debug\PluginRes.pdb
+F:\StorageDrive\BACKUP\Documents\Visual Studio 2005\Projects\Codeweaver.root\Codeweaver\PluginRes\obj\Debug\PluginRes.csprojResolveAssemblyReference.cache
